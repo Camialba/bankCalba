@@ -72,14 +72,15 @@ class VentanaRegistro:
                     nuevo_usuario = CuentaCorriente(self.newUserName.get(), self.newUserDni.get(), self.newUserLastName.get())
                 case "caja de ahorros":
                     nuevo_usuario = CajaDeAhorros(self.newUserName.get(), self.newUserDni.get(), self.newUserLastName.get())
+                case "":
+                    mb.showerror("ERROR - BANCO CAMI", "Todos los datos deben estar completos")
         except TclError:
             mb.showerror("ERROR - BANCO CAMI", "Ingrese un dato válido según corresponda")
         if nuevo_usuario != any:
             usuarios.append ([self.newUserName.get(), self.newUserDni.get()])
             print(usuarios)
             VentanaMovimientos(nuevo_usuario)
-        else:
-            mb.showerror("ERROR - BANCO CAMI", "Por favor seleccione un tipo de cuenta")
+
 
 
 #app = VentanaRegistro()

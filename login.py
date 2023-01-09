@@ -67,15 +67,11 @@ class VentanaLogin:
     def ingreso (self):
         print (userList)
         for user in userList:
-            if self.newUserDni.get() in user:
+            if self.newUserDni.get() == user[1]:
                 usuario = Cb(self.newUserName.get(), self.newUserDni.get(), self.newUserLastName.get())   
                 mov.VentanaMovimientos(usuario)
-                break
-            else:
-                mb.showerror("ERROR - BANCO CAMI", "Credenciales inexistentes. Por favor, registrese para ingresar")
-                self.newUserName.set("")
-                self.newUserDni.set(0)
-                self.newUserLastName.set("")
+            # else:
+            #     mb.showerror("ERROR - BANCO CAMI", "Credenciales inexistentes. Por favor, registrese para ingresar")
                 
                     
 
